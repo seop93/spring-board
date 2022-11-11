@@ -29,7 +29,7 @@ public class ArticleController {
     public String listPage(Model model){
         List<Article> articles = articleRepository.findAll();
         model.addAttribute("articles", articles);
-        return "/list";
+        return "articles/list";
     }
 
     @GetMapping("/new")
@@ -49,7 +49,7 @@ public class ArticleController {
         Optional<Article> optionalArticle = articleRepository.findById(id);
         if(!optionalArticle.isEmpty()) {
             model.addAttribute("article", optionalArticle.get());
-            return "show";
+            return "articles/show";
         }
             return "error";
 
@@ -61,7 +61,7 @@ public class ArticleController {
 
         if(!optionalArticle.isEmpty()){
             model.addAttribute("article", optionalArticle.get());
-            return "edit";
+            return "articles/edit";
         } else {
             model.addAttribute("message", String.format("%d가 없습니다.", id));
             return "error";
