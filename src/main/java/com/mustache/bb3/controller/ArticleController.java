@@ -25,6 +25,12 @@ public class ArticleController {
         this.articleRepository = articleRepository;
     }
 
+
+    @GetMapping("/haelim")
+    public String haelim(){
+        return "haelim";
+    }
+
     @GetMapping("")
     public String listPage(Model model){
         List<Article> articles = articleRepository.findAll();
@@ -34,7 +40,7 @@ public class ArticleController {
 
     @GetMapping("/new")
     public String createArticlePage(){
-        return "new";
+        return "articles/new";
     }
 
     @PostMapping("")
