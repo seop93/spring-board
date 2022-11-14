@@ -26,11 +26,6 @@ public class ArticleController {
     }
 
 
-    @GetMapping("/haelim")
-    public String haelim(){
-        return "haelim";
-    }
-
     @GetMapping("")
     public String listPage(Model model){
         List<Article> articles = articleRepository.findAll();
