@@ -18,11 +18,15 @@ import javax.persistence.Table;
 public class Hospital {
 
     @Id // GenratedValue안씀
-    private  Integer id;
+    private Integer id;
 
-    @Column( name = "hospital_name")
-    private String hospitalName; //칼럼에 옵션을 여러가지 정할 수 있습니다. 칼럼명을 매핑할 수 잇습니다.
+    @Column(name = "road_name_address")
     private String roadNameAddress;
 
-
+    @Column(name = "hospital_name")
+    private String hospitalName;
+    private Integer patientRoomCount;
+    private Integer totalNumberOfBeds;
+    private String businessTypeName;
+    private Float totalAreaSize;
 }
