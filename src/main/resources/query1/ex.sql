@@ -1,0 +1,1 @@
+SELECT * FROM nation_wide_hospitals where full_address like "경기도 수원시%" AND hospital_name like "%피부%";
