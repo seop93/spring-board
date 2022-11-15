@@ -15,15 +15,15 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/hospitals")
 public class HospitalRestController {
-    private final HospitalService hospitalService;
+    HospitalService hospitalService;
 
-    public HospitalRestController(HospitalService hospitalService) {
-        this.hospitalService = hospitalService;
+    public HospitalRestController(HospitalService hospitalService){
+        this.hospitalService=hospitalService;
     }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<HospitalResponse> get(@PathVariable Integer id) { // ResponseEntity도 DTO타입
+    @GetMapping(value="/{id}")
+    public ResponseEntity<HospitalResponse> get(@PathVariable Integer id){
         HospitalResponse hospitalResponse = hospitalService.getHospital(id); // DTO
         return ResponseEntity.ok().body(hospitalResponse); // Return은 DTO로
+
     }
 }
