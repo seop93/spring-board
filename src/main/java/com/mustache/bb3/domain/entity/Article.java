@@ -1,4 +1,4 @@
-package com.mustache.bb3.domain;
+package com.mustache.bb3.domain.entity;
 
 
 import lombok.AllArgsConstructor;
