@@ -1,4 +1,4 @@
-package com.mustache.bb3.domain.dto;
+package com.mustache.bb3.domain.entity;
 
 import org.springframework.lang.Nullable;
 
@@ -21,9 +21,9 @@ public class Product {
 
     @Column(nullable = false)
     private Integer stock;
-
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
+    private Integer patientRoomCount;
+    private Integer totalNumberOfBeds;
+    private String businessTypeName;
+    private Float totalAreaSize;
 
 }

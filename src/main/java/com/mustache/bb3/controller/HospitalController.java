@@ -1,6 +1,6 @@
 package com.mustache.bb3.controller;
 
-import com.mustache.bb3.domain.dto.Hospital;
+import com.mustache.bb3.domain.entity.Hospital;
 import com.mustache.bb3.repository.HospitalRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
