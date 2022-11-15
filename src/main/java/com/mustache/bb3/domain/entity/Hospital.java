@@ -1,6 +1,7 @@
-package com.mustache.bb3.domain.dto;
+package com.mustache.bb3.domain.entity;
 
 
+import com.mustache.bb3.domain.dto.HospitalResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,11 +14,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "nation_wide_hospitals") //hospital 이라는 테이블이 아님
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Hospital {
-
-    @Id // GenratedValue안씀
+    @Id
     private Integer id;
 
     @Column(name = "road_name_address")
@@ -29,4 +27,12 @@ public class Hospital {
     private Integer totalNumberOfBeds;
     private String businessTypeName;
     private Float totalAreaSize;
+
+    // HospitalEntity를 HospitalResponse Dto로 만들어주는 부분
+    public static HospitalResponse of(Hospital hospital) {
+        return new HospitalResponse(hospital.getId(),
+                hospital.getRoadNameAddress(), hospital.getHospitalName(),
+                hospital.getPatientRoomCount(), hospital.getTotalNumberOfBeds(), hospital.getBusinessTypeName(),
+                hospital.getTotalAreaSize());
+    }
 }
