@@ -3,10 +3,14 @@ package com.mustache.bb3.domain.dto;
 
 import com.mustache.bb3.domain.entity.Article;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @Getter
+@NoArgsConstructor
+@Builder
 public class ArticleDto {
 
     private Long id;
