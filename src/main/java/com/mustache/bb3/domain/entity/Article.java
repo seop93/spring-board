@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Table(name = "article4")
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Article {
@@ -29,6 +30,8 @@ public class Article {
         this.title = title;
         this.content = content;
     }
+
+
 
     public static ArticleDto of(Article article){
 
